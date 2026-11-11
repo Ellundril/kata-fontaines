@@ -1,0 +1,82 @@
+// Extrait d'une réponse au format de l'API open data « explore v2.1 »,
+// celle des portails de Paris et de Nantes que vous utiliserez en S8.
+// Les données sont rangées dans une enveloppe : total_count, puis results.
+// Ce fichier est relié avant script.js dans index.html.
+
+const reponse = {
+  total_count: 8,
+  results: [
+    {
+      type_objet: "BORNE_FONTAINE",
+      modele: "Wallace",
+      voie: "RUE DE LA ROQUETTE",
+      commune: "PARIS 11EME ARRONDISSEMENT",
+      dispo: "OUI",
+      motif_ind: null,
+      geo_point_2d: { lon: 2.3742, lat: 48.8559 },
+    },
+    {
+      type_objet: "BORNE_FONTAINE",
+      modele: "Arceau",
+      voie: "BOULEVARD VOLTAIRE",
+      commune: "PARIS 11EME ARRONDISSEMENT",
+      dispo: "NON",
+      motif_ind: "Travaux",
+      geo_point_2d: { lon: 2.3801, lat: 48.8547 },
+    },
+    {
+      type_objet: "FONTAINE_BOIS",
+      modele: "Fontaine Bois",
+      voie: "PARC DES BUTTES-CHAUMONT",
+      commune: "PARIS 19EME ARRONDISSEMENT",
+      dispo: "OUI",
+      motif_ind: null,
+      geo_point_2d: { lon: 2.3828, lat: 48.8809 },
+    },
+    {
+      type_objet: "BORNE_FONTAINE",
+      modele: "Wallace",
+      voie: "AVENUE JEAN JAURES",
+      commune: "PARIS 19EME ARRONDISSEMENT",
+      dispo: "OUI",
+      motif_ind: null,
+      geo_point_2d: { lon: 2.3779, lat: 48.8846 },
+    },
+    {
+      type_objet: "FONTAINE_ARCEAU",
+      modele: "Arceau",
+      voie: "RUE MOUFFETARD",
+      commune: "PARIS 5EME ARRONDISSEMENT",
+      dispo: "NON",
+      motif_ind: "Gel",
+      geo_point_2d: { lon: 2.3497, lat: 48.8417 },
+    },
+    {
+      type_objet: "BORNE_FONTAINE",
+      modele: "Wallace",
+      voie: "PLACE DU PANTHEON",
+      commune: "PARIS 5EME ARRONDISSEMENT",
+      dispo: "OUI",
+      motif_ind: null,
+      geo_point_2d: { lon: 2.3460, lat: 48.8462 },
+    },
+    {
+      type_objet: "FONTAINE_BOIS",
+      modele: "Fontaine Bois",
+      voie: "JARDIN DES PLANTES",
+      commune: "PARIS 5EME ARRONDISSEMENT",
+      dispo: "OUI",
+      motif_ind: null,
+      geo_point_2d: { lon: 2.3594, lat: 48.8440 },
+    },
+    {
+      type_objet: "BORNE_FONTAINE",
+      modele: "Wallace",
+      voie: "RUE OBERKAMPF",
+      commune: "PARIS 11EME ARRONDISSEMENT",
+      dispo: "OUI",
+      motif_ind: null,
+      geo_point_2d: { lon: 2.3779, lat: 48.8649 },
+    },
+  ],
+}

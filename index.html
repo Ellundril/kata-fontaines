@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fontaines à boire</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Fontaines à boire</h1>
+    <p id="compteur">Chargement…</p>
+  </header>
+
+  <main>
+    <div class="filtres">
+      <label for="choix-commune">Arrondissement</label>
+      <select id="choix-commune">
+        <option value="tous">Tous</option>
+        <option value="PARIS 5EME ARRONDISSEMENT">5e</option>
+        <option value="PARIS 11EME ARRONDISSEMENT">11e</option>
+        <option value="PARIS 19EME ARRONDISSEMENT">19e</option>
+      </select>
+
+      <button type="button" id="btn-en-service">En service seulement</button>
+    </div>
+
+    <ul id="liste"></ul>
+  </main>
+
+  <script src="fontaines.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
