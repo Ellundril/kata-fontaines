@@ -20,6 +20,7 @@ console.log(reponse.results[4].motif_ind);
 function extraireFontaines(reponse) {
   return reponse.results;
 }
+const fontaines = extraireFontaines(reponse);
 // TODO 3 — afficherFontaines(liste)
 // 1. Vide <ul id="liste">
 // 2. Un <li> par fontaine : la voie, puis la commune
@@ -45,15 +46,32 @@ function afficherFontaines(liste) {
   compteur.textContent = `${liste.length} fontaines`;
 }
 // TODO 4 — Au chargement, affiche toutes les fontaines.
-afficherFontaines(extraireFontaines(reponse));
+afficherFontaines(fontaines);
 // TODO 5 — Une fonction en argument
 // a. estEnService(fontaine) retourne true si la fontaine est disponible
 // b. filtrer(liste, test) retourne un nouveau tableau avec les fontaines
 //    pour lesquelles test(fontaine) vaut true
 // c. Au clic sur « En service seulement », affiche filtrer(..., estEnService)
-function estEnService(fontaine) {}
+function estEnService(fontaine) {
+  return fontaine.dispo === "OUI";
+}
 
-function filtrer(liste, test) {}
+function filtrer(liste, test) {
+  let tabResult = [];
+  for (const fontaine of liste) {
+    if (test(fontaine)) {
+      tabResult.push(fontaine);
+    }
+  }
+  return tabResult;
+}
+const btnEnService = document.getElementById("btn-en-service");
+
+btnEnService.addEventListener("click", () => {
+  const fontainesEnService = filtrer(fontaines, estEnService);
+  console.log(fontainesEnService);
+  afficherFontaines(fontainesEnService);
+});
 
 // TODO 6 — Une fonction fléchée en argument
 // Quand on change l'arrondissement dans le <select>, affiche seulement
