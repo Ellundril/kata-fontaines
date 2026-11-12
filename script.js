@@ -45,7 +45,7 @@ function afficherFontaines(liste) {
   compteur.textContent = `${liste.length} fontaines`;
 }
 // TODO 4 — Au chargement, affiche toutes les fontaines.
-
+afficherFontaines(extraireFontaines(reponse));
 // TODO 5 — Une fonction en argument
 // a. estEnService(fontaine) retourne true si la fontaine est disponible
 // b. filtrer(liste, test) retourne un nouveau tableau avec les fontaines
