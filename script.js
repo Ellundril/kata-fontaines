@@ -114,9 +114,11 @@ select.addEventListener("change", () => {
     afficherFontaines(fontaineArrondissement);
   }
 });
+
 // =====================================================
 // Questions de recul (réponds en commentaire ici)
-// 1.
-// 2.
-// 3.
-// =====================================================
+// 1. Si j'écris filtrer(fontaines, estEnService()) avec des parenthèses, un message d'erreur s'affiche : script.js:56 Uncaught TypeError: Cannot read properties of undefined (reading 'dispo'), la fonction est exécutée directement alors qu'il faut que ce soit filtrer qui lance l'exécution à chaque itération. Du coup elle n'a pas encore d'argument puisque les arguments lui seront passés par filtrer.
+// 2.J'imagine que si tous les résultats ne sont pas encore arrivés, on peut avoir une longueur de result plus petite que total_count suivant comment fonctionne l'API.
+// 3. Une fonction qui appelle une fonction va l'exécuter seulement au moment où elle l'appelle alors qu'une fonction qui reçoit une fonction reçoit en réalité le retour de la fonction reçue en argument et se sert ensuite de l'argument dans son exécution.
+// PS: pour le pour aller plus loin : .filter() je ne l'ai remplacé que sur une ligne sinon ma fonction filtrer ne sert plus à rien et je trouvais ça dommage. Donc j'ai fait un mix des deux.
+//=====================================================
