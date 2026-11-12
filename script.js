@@ -17,8 +17,9 @@ console.log(reponse.results[1].geo_point_2d.lat);
 console.log(reponse.results[4].motif_ind);
 // TODO 2 — extraireFontaines(reponse)
 // Retourne le tableau des fontaines, sans l'enveloppe.
-function extraireFontaines(reponse) {}
-
+function extraireFontaines(reponse) {
+  return reponse.results;
+}
 // TODO 3 — afficherFontaines(liste)
 // 1. Vide <ul id="liste">
 // 2. Un <li> par fontaine : la voie, puis la commune
