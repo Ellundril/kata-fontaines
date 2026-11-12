@@ -78,7 +78,20 @@ btnEnService.addEventListener("click", () => {
 // les fontaines de cet arrondissement, avec filtrer et une fonction
 // fléchée écrite directement dans l'appel.
 // « Tous » réaffiche toutes les fontaines.
+const select = document.getElementById("choix-commune");
 
+select.addEventListener("change", () => {
+  const arrondissement = select.value;
+  if (arrondissement === "tous") {
+    afficherFontaines(fontaines);
+  } else {
+    const fontaineArrondissement = filtrer(
+      fontaines,
+      (fontaine) => fontaine.commune === arrondissement,
+    );
+    afficherFontaines(fontaineArrondissement);
+  }
+});
 // =====================================================
 // Questions de recul (réponds en commentaire ici)
 // 1.
