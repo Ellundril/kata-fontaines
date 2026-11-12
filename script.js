@@ -73,8 +73,26 @@ btnEnService.addEventListener("click", () => {
     fontainesEnService,
     (fontaine) => fontaine.commune === select.value,
   );
-  console.log(fontainesEnService);
-  afficherFontaines(fontainesEnServiceArrondissement);
+  switch (btnEnService.textContent) {
+    case "En service seulement":
+      if (select.value !== "tous") {
+        afficherFontaines(fontainesEnServiceArrondissement);
+      } else {
+        afficherFontaines(fontainesEnService);
+      }
+      btnEnService.textContent = "En et hors service";
+      break;
+    case "En et hors service":
+      if (select.value !== "tous") {
+        afficherFontaines(
+          filtrer(fontaines, (fontaine) => fontaine.commune === select.value),
+        );
+      } else {
+        afficherFontaines(fontaines);
+      }
+      btnEnService.textContent = "En service seulement";
+      break;
+  }
 });
 
 // TODO 6 — Une fonction fléchée en argument
