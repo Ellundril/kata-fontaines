@@ -68,7 +68,7 @@ function filtrer(liste, test) {
 const btnEnService = document.getElementById("btn-en-service");
 
 btnEnService.addEventListener("click", () => {
-  const fontainesEnService = filtrer(fontaines, estEnService);
+  const fontainesEnService = fontaines.filter(estEnService); //remplacé pour le bonus
   const fontainesEnServiceArrondissement = filtrer(
     fontainesEnService,
     (fontaine) => fontaine.commune === select.value,
