@@ -26,8 +26,24 @@ function extraireFontaines(reponse) {
 // 3. Une fontaine hors service reçoit la classe "hors-service"
 //    et son motif entre parenthèses
 // 4. Le compteur affiche « 8 fontaines »
-function afficherFontaines(liste) {}
+const listeFontaines = document.getElementById("liste");
+const compteur = document.getElementById("compteur");
 
+function afficherFontaines(liste) {
+  listeFontaines.innerHTML = "";
+  liste.forEach((fontaine) => {
+    const fontaineLi = document.createElement("li");
+    const voie = fontaine.voie;
+    const commune = fontaine.commune;
+    fontaineLi.textContent = `${voie} ${commune}`;
+    if (fontaine.dispo === "NON") {
+      fontaineLi.classList.add("hors-service");
+      fontaineLi.textContent = `${voie} ${commune} (${fontaine.motif_ind})`;
+    }
+    listeFontaines.appendChild(fontaineLi);
+  });
+  compteur.textContent = `${liste.length} fontaines`;
+}
 // TODO 4 — Au chargement, affiche toutes les fontaines.
 
 // TODO 5 — Une fonction en argument
