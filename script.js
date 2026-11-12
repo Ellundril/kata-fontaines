@@ -69,8 +69,12 @@ const btnEnService = document.getElementById("btn-en-service");
 
 btnEnService.addEventListener("click", () => {
   const fontainesEnService = filtrer(fontaines, estEnService);
+  const fontainesEnServiceArrondissement = filtrer(
+    fontainesEnService,
+    (fontaine) => fontaine.commune === select.value,
+  );
   console.log(fontainesEnService);
-  afficherFontaines(fontainesEnService);
+  afficherFontaines(fontainesEnServiceArrondissement);
 });
 
 // TODO 6 — Une fonction fléchée en argument
